@@ -11,7 +11,7 @@ Game::Game(Window *_parent)
     setScene(scene);
 
     for (int i = 0; i < 9; i++) {
-        Item * item = new Item("game-o.png");
+        Item *item = new Item("game");
         items.append(item);
         scene->addItem(item);
         item->setPos(i * 31, i * 31);

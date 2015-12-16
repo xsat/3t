@@ -3,11 +3,11 @@
         <file>menu-background.png</file>
         <file>exit.png</file>
         <file>game-background.png</file>
-        <file>game-o.png</file>
         <file>game-row.png</file>
-        <file>game-x.png</file>
         <file>exit-hover.png</file>
         <file>new.png</file>
         <file>new-hover.png</file>
+        <file>game-cross.png</file>
+        <file>game-zero.png</file>
     </qresource>
 </RCC>

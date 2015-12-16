@@ -10,7 +10,6 @@ class Window;
 
 class Game : public QGraphicsView
 {
-    Q_OBJECT
 public:
     explicit Game(Window *_parent = 0);
 private:

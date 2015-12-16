@@ -15,9 +15,9 @@ public:
     Block(const QString &fileName);
 protected:
     virtual void setImage();
+    virtual void setImage(QBrush &brush);
 private:
     QBrush brush;
-    QImage image;
 };
 
 #endif // BLOCK_H

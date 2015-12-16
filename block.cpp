@@ -3,16 +3,20 @@
 Block::Block(const QString &fileName)
     : QGraphicsRectItem()
     , brush()
-    , image()
 {
-    image.load(":/" +fileName);
-    brush.setTextureImage(image);
+    brush.setTextureImage(QImage(":/" +fileName));
     setImage();
     setPen(QPen(Qt::NoPen));
 }
 
 void Block::setImage()
 {
-    setBrush(brush);
-    setRect(image.rect());
+    setImage(brush);
 }
+
+void Block::setImage(QBrush &brush)
+{
+    setBrush(brush);
+    setRect(brush.textureImage().rect());
+}
+

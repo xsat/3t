@@ -1,8 +1,8 @@
 #ifndef BUTTON_H
 #define BUTTON_H
 
-#include <block.h>
-#include <QCursor.h>
+#include "block.h"
+#include <QCursor>
 
 class Menu;
 
@@ -17,7 +17,6 @@ protected:
     virtual void hoverLeaveEvent(QGraphicsSceneHoverEvent *);
 private:
     QBrush brush;
-    QImage image;
 };
 
 #endif // BUTTON_H

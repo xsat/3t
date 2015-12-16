@@ -5,20 +5,16 @@ Button::Button(const QString &fileName, Menu *menu)
     : Block(fileName + ".png")
     , menu(menu)
     , brush()
-    , image()
 {
     setCursor(QCursor(Qt::PointingHandCursor));
-    image.load(":/" + fileName + "-hover.png");
-    brush.setTextureImage(image);
-
+    brush.setTextureImage(QImage(":/" + fileName + "-hover.png"));
     setFlag(ItemIsFocusable, true);
     setAcceptHoverEvents(true);
 }
 
 void Button::setImage()
 {
-    setBrush(brush);
-    setRect(image.rect());
+    Block::setImage(brush);
 }
 
 void Button::hoverEnterEvent(QGraphicsSceneHoverEvent *)

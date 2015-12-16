@@ -9,7 +9,6 @@ class Window;
 
 class Menu : public QGraphicsView
 {
-    Q_OBJECT
 public:
     explicit Menu(Window *_parent = 0);
     void setMenu();
