@@ -15,6 +15,8 @@ public:
 private:
     QGraphicsScene *scene;
     QList<Item *> items;
+    QList<QPointF *> postions;
+    void setPostions();
 };
 
 #endif // GAME_H

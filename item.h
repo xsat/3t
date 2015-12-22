@@ -17,6 +17,8 @@ public:
     void setActive();
     void setDeactive();
     void setStatus(Status status);
+protected:
+    virtual void mousePressEvent(QGraphicsSceneMouseEvent *);
 private:
     QBrush brush;
     Status status;

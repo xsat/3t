@@ -27,6 +27,7 @@ void Item::setActive()
 
     setCursor(QCursor(Qt::PointingHandCursor));
     setBrush(QBrush());
+    setEnabled(true);
 }
 
 void Item::setDeactive()
@@ -34,9 +35,17 @@ void Item::setDeactive()
     setStatus(Deactive);
     setPen(QPen(Qt::NoPen));
     setCursor(QCursor(Qt::ArrowCursor));
+    setEnabled(false);
 }
 
 void Item::setStatus(Status status)
 {
     status = status;
+}
+
+void Item::mousePressEvent(QGraphicsSceneMouseEvent *)
+{
+    qDebug() << "Item::mousePressEvent(QGraphicsSceneMouseEvent *)";
+    setDeactive();
+    setZero();
 }

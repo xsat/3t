@@ -7,7 +7,7 @@ Window::Window(QWidget *_parent)
 {
     setFixedSize(400, 400);
     setWindowTitle("tic tac toe");
-    setMenu();
+    setGame();
 }
 
 void Window::setMenu()
