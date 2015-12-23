@@ -9,5 +9,7 @@
         <file>new-hover.png</file>
         <file>game-cross.png</file>
         <file>game-zero.png</file>
+        <file>player.png</file>
+        <file>player-deactive.png</file>
     </qresource>
 </RCC>

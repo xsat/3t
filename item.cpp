@@ -20,7 +20,6 @@ void Item::setCross()
 
 void Item::setActive()
 {
-    setStatus(Active);
     QPen pen(Qt::SolidLine);
     pen.setColor(QColor(255, 0, 0));
     setPen(pen);
@@ -32,15 +31,9 @@ void Item::setActive()
 
 void Item::setDeactive()
 {
-    setStatus(Deactive);
     setPen(QPen(Qt::NoPen));
     setCursor(QCursor(Qt::ArrowCursor));
     setEnabled(false);
-}
-
-void Item::setStatus(Status status)
-{
-    status = status;
 }
 
 void Item::mousePressEvent(QGraphicsSceneMouseEvent *)

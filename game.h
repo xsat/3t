@@ -2,6 +2,7 @@
 #define GAME_H
 
 #include "item.h"
+#include "player.h"
 
 #include <QGraphicsView>
 #include <QList>
@@ -15,6 +16,7 @@ public:
 private:
     QGraphicsScene *scene;
     QList<Item *> items;
+    QList<Player *> players;
     QList<QPointF *> postions;
     void setPostions();
 };

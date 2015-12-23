@@ -20,7 +20,8 @@ SOURCES += main.cpp\
     button.cpp \
     exit.cpp \
     new.cpp \
-    item.cpp
+    item.cpp \
+    player.cpp
 
 HEADERS  += game.h \
     menu.h \
@@ -29,7 +30,8 @@ HEADERS  += game.h \
     button.h \
     exit.h \
     new.h \
-    item.h
+    item.h \
+    player.h
 
 RESOURCES += \
     images.qrc
