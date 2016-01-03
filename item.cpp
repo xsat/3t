@@ -1,7 +1,9 @@
 #include "item.h"
+#include "game.h"
 
-Item::Item(const QString &fileName)
+Item::Item(const QString &fileName, Game *game)
     : Block(fileName + "-zero.png")
+    , game(game)
     , brush()
 {
     brush.setTextureImage(QImage(":/" + fileName + "-cross.png"));
@@ -10,12 +12,12 @@ Item::Item(const QString &fileName)
 
 void Item::setZero()
 {
-    Block::setImage(brush);
+    Block::setImage();
 }
 
 void Item::setCross()
 {
-    Block::setImage();
+    Block::setImage(brush);
 }
 
 void Item::setActive()
@@ -40,5 +42,12 @@ void Item::mousePressEvent(QGraphicsSceneMouseEvent *)
 {
     qDebug() << "Item::mousePressEvent(QGraphicsSceneMouseEvent *)";
     setDeactive();
-    setZero();
+
+    Status status = game->act();
+
+    if (status == Zero) {
+        setZero();
+    } else if (status == Cross) {
+        setCross();
+    }
 }

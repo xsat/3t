@@ -31,7 +31,8 @@ HEADERS  += game.h \
     exit.h \
     new.h \
     item.h \
-    player.h
+    player.h \
+    status.h
 
 RESOURCES += \
     images.qrc

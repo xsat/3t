@@ -1,3 +1,3 @@
 # 3t
 
-QT Project
+QT - tic tac toe game by Yuri Antonchik

@@ -14,7 +14,7 @@ Game::Game(Window *_parent)
     setPostions();
 
     for (int i = 0; i < 9; i++) {
-        Item *item = new Item("game");
+        Item *item = new Item("game", this);
         items.append(item);
         scene->addItem(item);
         item->setPos(*postions.at(i));
@@ -24,6 +24,7 @@ Game::Game(Window *_parent)
 
     Player *player1 = new Player("player");
     player1->setPos(50, 20);
+    player1->setStatus(Zero);
     scene->addItem(player1);
     players.append(player1);
 
@@ -32,6 +33,7 @@ Game::Game(Window *_parent)
     scene->addItem(player2);
     players.append(player2);
     player2->setDeactive();
+    player2->setStatus(Cross);
 
     setBackgroundBrush(QBrush(QImage(":/game-background.png")));
 }
@@ -47,4 +49,21 @@ void Game::setPostions()
     postions.append(new QPointF(60, 320));
     postions.append(new QPointF(160, 320));
     postions.append(new QPointF(260, 320));
+}
+
+Status Game::act()
+{
+    Player *active;
+
+    if (players[0]->getActive()) {
+        active = players[0];
+        players[0]->setDeactive();
+        players[1]->setActive();
+    } else {
+        active = players[1];
+        players[1]->setDeactive();
+        players[0]->setActive();
+    }
+
+    return active->getStatus();
 }

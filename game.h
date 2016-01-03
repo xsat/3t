@@ -3,6 +3,7 @@
 
 #include "item.h"
 #include "player.h"
+#include "status.h"
 
 #include <QGraphicsView>
 #include <QList>
@@ -13,6 +14,7 @@ class Game : public QGraphicsView
 {
 public:
     explicit Game(Window *_parent = 0);
+    Status act();
 private:
     QGraphicsScene *scene;
     QList<Item *> items;
