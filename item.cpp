@@ -5,6 +5,7 @@ Item::Item(const QString &fileName, Game *game)
     : Block(fileName + "-zero.png")
     , game(game)
     , brush()
+    , position()
 {
     brush.setTextureImage(QImage(":/" + fileName + "-cross.png"));
     setActive();
@@ -38,10 +39,31 @@ void Item::setDeactive()
     setEnabled(false);
 }
 
+void Item::setPosition(int i)
+{
+    int size = 3;
+    position.setX(i - (qFloor(i / size) * size));
+    position.setY(qFloor(i / size));
+}
+
+void Item::setPosition(int xpos, int ypos)
+{
+    position.setX(xpos);
+    position.setY(ypos);
+}
+
+QPoint Item::getPosition() const
+{
+    return position;
+}
+
 void Item::mousePressEvent(QGraphicsSceneMouseEvent *)
 {
     qDebug() << "Item::mousePressEvent(QGraphicsSceneMouseEvent *)";
     setDeactive();
+
+    qDebug() << "x: " << position.x();
+    qDebug() << "y: " << position.y();
 
     Status status = game->act();
 

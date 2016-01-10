@@ -18,8 +18,7 @@ Game::Game(Window *_parent)
         items.append(item);
         scene->addItem(item);
         item->setPos(*postions.at(i));
-
-        qDebug() << "i: " << i;
+        item->setPosition(i);
     }
 
     Player *player1 = new Player("player");
@@ -65,5 +64,15 @@ Status Game::act()
         players[0]->setActive();
     }
 
+    if (isWin()) {
+        qDebug() << "Game::act() win";
+    }
+
     return active->getStatus();
+}
+
+bool Game::isWin() const
+{
+
+    return false;
 }

@@ -21,6 +21,7 @@ private:
     QList<Player *> players;
     QList<QPointF *> postions;
     void setPostions();
+    bool isWin() const;
 };
 
 #endif // GAME_H
